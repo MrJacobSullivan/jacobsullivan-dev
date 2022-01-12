@@ -1,13 +1,16 @@
-import type { ReactNode, ReactElement } from 'react'
+import type { ReactElement } from 'react'
 
-import styles from './Header.module.scss'
+import { HeaderContainer, TitleContainer, TitleText, SubtitleText } from './Header.styled'
 
-type Props = {
-  children?: ReactNode
-}
-
-const Header = ({ children }: Props): ReactElement => {
-  return <header className={styles.container}></header>
+const Header = (): ReactElement => {
+  return (
+    <HeaderContainer>
+      <TitleContainer>
+        <TitleText>Jacob Sullivan</TitleText>
+        <SubtitleText>Software Engineer</SubtitleText>
+      </TitleContainer>
+    </HeaderContainer>
+  )
 }
 
 export default Header

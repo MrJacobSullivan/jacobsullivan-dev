@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 
 import { GlobalTheme } from '../theme'
 
-import '../sass/global.scss'
+import '../sass/_app.scss'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (

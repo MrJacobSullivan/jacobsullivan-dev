@@ -1,15 +1,24 @@
 import styled from 'styled-components'
 
-interface ILayoutContainer {
-  dark?: boolean
-}
+interface ILayoutContainer {}
 
 const LayoutContainer = styled.div<ILayoutContainer>`
-  background: ${({ dark }) => (dark ? 'red' : 'yellow')};
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
 `
 
-interface ITitleText {
-  dark?: boolean
-}
+const Margins = styled.div`
+  width: 65vw;
+  display: flex;
+  flex-direction: column;
+`
 
-export { LayoutContainer }
+interface IMainContainer {}
+
+const MainContainer = styled.main<IMainContainer>`
+  flex-grow: 1;
+`
+
+export { LayoutContainer, Margins, MainContainer }

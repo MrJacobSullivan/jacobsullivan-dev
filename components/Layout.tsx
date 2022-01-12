@@ -1,15 +1,26 @@
 import type { ReactNode, ReactElement } from 'react'
 
-import styles from './Layout.module.scss'
+import { LayoutContainer, Margins, MainContainer } from './Layout.styled'
 
-import { LayoutContainer } from './Layout.styled'
+import Header from './Header'
+import Footer from './Footer'
 
 type Props = {
   children?: ReactNode
 }
 
 const Layout = ({ children }: Props): ReactElement => {
-  return <LayoutContainer className={styles.container}>{children}</LayoutContainer>
+  return (
+    <LayoutContainer>
+      <Margins>
+        <Header />
+
+        <MainContainer>{children}</MainContainer>
+
+        <Footer />
+      </Margins>
+    </LayoutContainer>
+  )
 }
 
 export default Layout
