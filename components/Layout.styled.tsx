@@ -1,24 +1,19 @@
-import styled from 'styled-components'
+import { styled } from 'twin.macro';
 
 interface ILayoutContainer {}
 
-const LayoutContainer = styled.div<ILayoutContainer>`
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  justify-content: center;
-`
+const LayoutContainer = styled.div<ILayoutContainer>``;
 
 const Margins = styled.div`
   width: 65vw;
   display: flex;
   flex-direction: column;
-`
+`;
 
 interface IMainContainer {}
 
 const MainContainer = styled.main<IMainContainer>`
   flex-grow: 1;
-`
+`;
 
-export { LayoutContainer, Margins, MainContainer }
+export { LayoutContainer, Margins, MainContainer };

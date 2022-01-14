@@ -1,13 +1,13 @@
-import type { ReactNode, ReactElement } from 'react'
+import type { ReactNode, ReactElement } from 'react';
 
-import { LayoutContainer, Margins, MainContainer } from './Layout.styled'
+import { LayoutContainer, Margins, MainContainer } from './Layout.styled';
 
-import Header from './Header'
-import Footer from './Footer'
+import Header from './Header';
+import Footer from './Footer';
 
 type Props = {
-  children?: ReactNode
-}
+  children?: ReactNode;
+};
 
 const Layout = ({ children }: Props): ReactElement => {
   return (
@@ -20,7 +20,7 @@ const Layout = ({ children }: Props): ReactElement => {
         <Footer />
       </Margins>
     </LayoutContainer>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

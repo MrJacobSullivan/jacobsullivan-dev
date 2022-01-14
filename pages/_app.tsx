@@ -1,20 +1,13 @@
-import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
+import * as React from 'react';
+import GlobalStyles from '../components/GlobalStyles';
 
-import Layout from '../components/Layout'
+import type { AppProps } from 'next/app';
 
-import { GlobalTheme } from '../theme'
+const App = ({ Component, pageProps }: AppProps) => (
+  <div>
+    <GlobalStyles />
+    <Component {...pageProps} />
+  </div>
+);
 
-import '../sass/_app.scss'
-
-const App = ({ Component, pageProps }: AppProps) => {
-  return (
-    <ThemeProvider theme={GlobalTheme}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
-  )
-}
-
-export default App
+export default App;
