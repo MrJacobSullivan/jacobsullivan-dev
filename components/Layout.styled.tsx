@@ -4,19 +4,15 @@ interface ILayoutContainer {
   dark?: boolean;
 }
 
-const LayoutContainer = styled.div<ILayoutContainer>`
-  ${tw`bg-green-5`};
-  ${({ dark }) => dark && tw`bg-red-5`};
-`;
+const LayoutContainer = styled.div<ILayoutContainer>(({ dark }) => [
+  tw`flex justify-center w-full h-screen`,
+  dark && tw`bg-red-5`
+]);
 
-const Margins = styled.div`
-  ${tw`bg-blue-5`}
-`;
+const Margins = styled.div(() => [tw`flex flex-col w-2/3 min-h-screen`]);
 
 interface IMainContainer {}
 
-const MainContainer = styled.main<IMainContainer>`
-  flex-grow: 1;
-`;
+const PageContainer = styled.main<IMainContainer>(() => [tw`flex-grow`]);
 
-export { LayoutContainer, Margins, MainContainer };
+export { LayoutContainer, Margins, PageContainer };

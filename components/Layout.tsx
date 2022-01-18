@@ -1,6 +1,6 @@
-import type { ReactNode, ReactElement } from 'react';
+import type { ReactNode } from 'react';
 
-import { LayoutContainer, Margins, MainContainer } from './Layout.styled';
+import { LayoutContainer, Margins, PageContainer } from './Layout.styled';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -9,14 +9,12 @@ type Props = {
   children?: ReactNode;
 };
 
-const Layout = ({ children }: Props): ReactElement => {
+const Layout = ({ children }: Props) => {
   return (
     <LayoutContainer>
       <Margins>
         <Header />
-
-        <MainContainer>{children}</MainContainer>
-
+        <PageContainer>{children}</PageContainer>
         <Footer />
       </Margins>
     </LayoutContainer>

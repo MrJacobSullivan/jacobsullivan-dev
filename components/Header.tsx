@@ -1,5 +1,3 @@
-import type { ReactElement } from 'react';
-
 import {
   HeaderContainer,
   TitleContainer,
@@ -7,7 +5,7 @@ import {
   SubtitleText
 } from './Header.styled';
 
-const Header = (): ReactElement => {
+const Header = () => {
   return (
     <HeaderContainer>
       <TitleContainer>

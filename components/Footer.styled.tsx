@@ -1,15 +1,15 @@
-import styled from 'styled-components';
+import tw, { styled } from 'twin.macro';
 
 interface IFooterContainer {}
 
-const FooterContainer = styled.footer<IFooterContainer>`
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-`;
+const FooterContainer = styled.footer<IFooterContainer>(() => [
+  tw`bottom-0 flex items-center justify-center h-24 p-4 rounded-t bg-gray-8`
+]);
 
 interface ICopyrightText {}
 
-const CopyrightText = styled.span<ICopyrightText>``;
+const CopyrightText = styled.span<ICopyrightText>(() => [
+  tw`text-sm font-light`
+]);
 
 export { FooterContainer, CopyrightText };
