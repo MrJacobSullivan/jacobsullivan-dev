@@ -5,12 +5,12 @@ interface ILayoutContainer {
 }
 
 const LayoutContainer = styled.div<ILayoutContainer>`
-  ${tw`bg-green-500`};
-  ${({ dark }) => dark && tw`bg-red-500`};
+  ${tw`bg-green-5`};
+  ${({ dark }) => dark && tw`bg-red-5`};
 `;
 
 const Margins = styled.div`
-  ${tw`bg-blue-400`}
+  ${tw`bg-blue-5`}
 `;
 
 interface IMainContainer {}
