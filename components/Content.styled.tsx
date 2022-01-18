@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const HeaderText = styled.h2``
+const HeaderText = styled.h2``;
 
-const BodyText = styled.p``
+const BodyText = styled.p``;
 
-export { HeaderText, BodyText }
+export { HeaderText, BodyText };

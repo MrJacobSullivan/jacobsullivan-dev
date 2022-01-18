@@ -1,6 +1,11 @@
-import type { ReactElement } from 'react'
+import type { ReactElement } from 'react';
 
-import { HeaderContainer, TitleContainer, TitleText, SubtitleText } from './Header.styled'
+import {
+  HeaderContainer,
+  TitleContainer,
+  TitleText,
+  SubtitleText
+} from './Header.styled';
 
 const Header = (): ReactElement => {
   return (
@@ -10,7 +15,7 @@ const Header = (): ReactElement => {
         <SubtitleText>Software Engineer</SubtitleText>
       </TitleContainer>
     </HeaderContainer>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
