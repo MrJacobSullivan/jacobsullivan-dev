@@ -1,13 +1,16 @@
-import { styled } from 'twin.macro';
+import tw, { styled } from 'twin.macro';
 
-interface ILayoutContainer {}
+interface ILayoutContainer {
+  dark?: boolean;
+}
 
-const LayoutContainer = styled.div<ILayoutContainer>``;
+const LayoutContainer = styled.div<ILayoutContainer>`
+  ${tw`bg-green-500`};
+  ${({ dark }) => dark && tw`bg-red-500`};
+`;
 
 const Margins = styled.div`
-  width: 65vw;
-  display: flex;
-  flex-direction: column;
+  ${tw`bg-blue-400`}
 `;
 
 interface IMainContainer {}
