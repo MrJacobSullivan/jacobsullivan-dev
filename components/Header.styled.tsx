@@ -3,7 +3,7 @@ import tw, { styled } from 'twin.macro';
 interface IHeaderContainer {}
 
 const HeaderContainer = styled.header<IHeaderContainer>(() => [
-  tw`flex items-center h-32 pl-8 rounded-b bg-gray-8`
+  tw`flex items-center h-32 pl-8`
 ]);
 
 interface ITitleContainer {}

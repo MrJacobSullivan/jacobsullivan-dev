@@ -1,5 +1,10 @@
-export type Project = {
-  name: string;
+export interface Metadata {
+  title: string;
+  slug: string;
   description: string;
-  links?: string[];
-};
+}
+
+export interface Article {
+  metadata: Metadata;
+  content: string;
+}

@@ -5,7 +5,7 @@ import {
   SubtitleText
 } from './Header.styled';
 
-import Navigation from './Navigation';
+// import Navigation from './Navigation';
 
 const Header = () => {
   return (
@@ -13,7 +13,7 @@ const Header = () => {
       <TitleContainer>
         <TitleText>Jacob Sullivan</TitleText>
         <SubtitleText>Software Engineer</SubtitleText>
-        <Navigation />
+        {/* <Navigation /> */}
       </TitleContainer>
     </HeaderContainer>
   );
