@@ -11,11 +11,11 @@ export enum Folder {
 }
 
 // points to ~/content
-export const getContentPath = () => path.join(process.cwd(), 'content');
+export const contentFolderPath = path.join(process.cwd(), 'content');
 
 // point to ~/content/[folder]
 export const getFolderPath = (folder: Folder) => {
-  return path.join(getContentPath(), folder);
+  return path.join(contentFolderPath, folder);
 };
 
 // array of files in folder from getFolderPath
@@ -46,14 +46,16 @@ export const getArticle = (folder: Folder, slug: string) => {
 
   const {
     content,
-    data: { title, description }
+    data: { title, description, date, tags }
   } = matter(file);
 
   const article: Article = {
     metadata: {
       slug,
       title,
-      description
+      description,
+      date,
+      tags
     },
     content
   };

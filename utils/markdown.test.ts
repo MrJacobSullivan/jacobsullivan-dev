@@ -1,11 +1,11 @@
 import {
   Folder,
-  getContentPath,
+  contentFolderPath,
   getFolderPath,
   getFilePaths,
   getArticles,
   getArticle
-} from '../markdown';
+} from './markdown';
 
 const constants = {
   CONTENT_FOLDER_PATH: '/Users/jacobsullivan/Desktop/jacobsullivan-dev/content',
@@ -25,13 +25,19 @@ const constants = {
   TEST_ARTICLE_SLUG: 'test',
   TEST_ARTICLE_CONTENT: {
     content: '\n# Hello, world\n',
-    metadata: { description: 'this is a test', slug: 'test', title: 'Test' }
+    metadata: {
+      description: 'this is a test',
+      slug: 'test',
+      title: 'Test',
+      tags: ['test', 'javascript'],
+      date: '01/25/2022'
+    }
   }
 };
 
 describe('getContentPath', () => {
   test('it should return the correct content path', () => {
-    expect(getContentPath()).toEqual(constants.CONTENT_FOLDER_PATH);
+    expect(contentFolderPath).toEqual(constants.CONTENT_FOLDER_PATH);
   });
 });
 
@@ -49,14 +55,16 @@ describe('getFilePaths', () => {
 
 describe('getArticles', () => {
   test('it should return the correct data for each article', () => {
-    expect(getArticles(Folder.test)).toEqual(constants.TEST_ARTCICLES);
+    expect(getArticles(Folder.test)).toMatchObject(constants.TEST_ARTCICLES);
   });
 });
 
 describe('getArticle', () => {
   test('it should return the correct data for an article', () => {
-    expect(getArticle(Folder.test, constants.TEST_ARTICLE_SLUG)).toEqual(
-      constants.TEST_ARTICLE_CONTENT
+    const article = getArticle(Folder.test, constants.TEST_ARTICLE_SLUG);
+    expect(article).toMatchObject(constants.TEST_ARTICLE_CONTENT);
+    expect(article.metadata).toMatchObject(
+      constants.TEST_ARTICLE_CONTENT.metadata
     );
   });
 });
