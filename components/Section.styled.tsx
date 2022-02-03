@@ -1,15 +1,10 @@
 import tw, { styled } from 'twin.macro';
+import { HeaderText } from './Content.styled';
 
-interface ISectionContainer {}
+const SectionContainer = styled.div(() => [tw`flex flex-col`]);
 
-const SectionContainer = styled.div<ISectionContainer>(() => [tw`flex`]);
+const SectionTitle = styled(HeaderText)(() => [tw`font-light text-2xl`]);
 
-interface ISectionTitleContainer {}
+const SectionContent = styled.div(() => [tw``]);
 
-const SectionTitleContainer = styled.h2<ISectionTitleContainer>(() => []);
-
-interface ISectionContentContainer {}
-
-const SectionContentContainer = styled.div<ISectionContentContainer>(() => []);
-
-export { SectionContainer, SectionTitleContainer, SectionContentContainer };
+export { SectionContainer, SectionTitle, SectionContent };

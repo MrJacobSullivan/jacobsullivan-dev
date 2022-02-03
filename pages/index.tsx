@@ -10,9 +10,10 @@ const Home: NextPage = () => {
     <Layout>
       <Section title="Intro">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-          ut unde magni placeat voluptates quas quasi, eum quae ab porro
-          nesciunt nulla suscipit esse quaerat cumque hic, quia qui tempore!
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi placeat
+          quia totam. Ad consequatur aliquam repellat obcaecati tempora
+          provident hic debitis, suscipit deleniti. Cupiditate quisquam, omnis
+          illum ut accusantium error.
         </p>
       </Section>
     </Layout>

@@ -2,10 +2,9 @@ import type { ReactNode, ReactElement } from 'react';
 
 import {
   SectionContainer,
-  SectionTitleContainer,
-  SectionContentContainer
+  SectionTitle,
+  SectionContent
 } from './Section.styled';
-import { HeaderText } from './Content.styled';
 
 type Props = {
   title?: String;
@@ -15,11 +14,8 @@ type Props = {
 const Section = ({ title, children }: Props): ReactElement => {
   return (
     <SectionContainer>
-      <SectionTitleContainer>
-        <HeaderText>{title}</HeaderText>
-      </SectionTitleContainer>
-
-      <SectionContentContainer>{children}</SectionContentContainer>
+      <SectionTitle>{title}</SectionTitle>
+      <SectionContent>{children}</SectionContent>
     </SectionContainer>
   );
 };
