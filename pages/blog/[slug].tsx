@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { getMDXComponent } from 'mdx-bundler/client';
+import ReactMarkdown from 'react-markdown';
 
 import type {
   NextPage,
@@ -13,13 +13,13 @@ import Layout from '../../components/Layout';
 
 import { components } from '../../components/mdx';
 
-import { getPaths, getFileSource } from '../../utils/mdx';
+// import { getPaths, getFileSource } from '../../utils/markdown';
 
 const Post: NextPage = ({
-  code,
-  frontmatter
+  frontmatter,
+  markdown
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const MDX = React.useMemo(() => getMDXComponent(code), [code]);
+  if (!frontmatter) return <></>;
 
   return (
     <Layout>
@@ -29,7 +29,7 @@ const Post: NextPage = ({
         </div>
 
         <article>
-          <MDX components={components} />
+          <ReactMarkdown sourcePos={} />
         </article>
       </section>
     </Layout>

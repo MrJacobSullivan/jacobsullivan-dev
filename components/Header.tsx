@@ -1,21 +1,47 @@
+import * as React from 'react';
+import ThemeButton from './ThemeButton';
 import {
-  HeaderContainer,
-  TitleContainer,
-  TitleText,
-  SubtitleText
+  Container,
+  Title,
+  Navigation,
+  TitleLink,
+  PageLink
 } from './Header.styled';
-
-// import Navigation from './Navigation';
+import { config } from '../config';
 
 const Header = () => {
   return (
-    <HeaderContainer>
-      <TitleContainer>
-        <TitleText>Jacob Sullivan</TitleText>
-        <SubtitleText>Software Engineer</SubtitleText>
-        {/* <Navigation /> */}
-      </TitleContainer>
-    </HeaderContainer>
+    <Container>
+      <Title>
+        <TitleLink href="/">
+          <a>Jacob Sullivan</a>
+        </TitleLink>
+      </Title>
+
+      <Navigation>
+        <PageLink href="/work">
+          <a>Work</a>
+        </PageLink>
+
+        <PageLink href="/blog">
+          <a>Blog</a>
+        </PageLink>
+
+        <PageLink href="/resume">
+          <a target="_blank" rel="noopener noreferrer">
+            Resume
+          </a>
+        </PageLink>
+
+        <PageLink href={config.github}>
+          <a target="_blank" rel="noopener noreferrer">
+            Github
+          </a>
+        </PageLink>
+
+        <ThemeButton />
+      </Navigation>
+    </Container>
   );
 };
 

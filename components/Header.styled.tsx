@@ -1,23 +1,23 @@
-import tw, { styled } from 'twin.macro';
+import tw, { styled, css } from 'twin.macro';
+import Link from 'next/link';
 
-interface IHeaderContainer {}
-
-const HeaderContainer = styled.header<IHeaderContainer>(() => [
-  tw`flex items-center h-32 pl-8`
+const Container = styled.header(() => [
+  tw`sticky top-0 z-50 flex w-full h-10 px-5 py-10 mt-2 rounded dark:bg-gray-8 bg-gray-2`
 ]);
 
-interface ITitleContainer {}
+const Title = styled.div(() => [tw`flex items-center w-1/2`]);
 
-const TitleContainer = styled.div<ITitleContainer>(() => []);
+const Navigation = styled.nav(() => [tw`flex items-center w-1/2`]);
 
-interface ITitleText {}
-
-const TitleText = styled.h1<ITitleText>(() => [tw`mb-2 text-3xl`]);
-
-interface ISubtitleText {}
-
-const SubtitleText = styled.h2<ISubtitleText>(() => [
-  tw`text-xl font-extralight`
+const TitleLink = styled(Link)(() => [
+  tw`text-xl font-light transition duration-150`,
+  css`
+    * {
+      color: ${tw`text-violet-5`};
+    }
+  `
 ]);
 
-export { HeaderContainer, TitleContainer, TitleText, SubtitleText };
+const PageLink = styled(Link)(() => [tw`ml-4`]);
+
+export { Container, Title, Navigation, TitleLink, PageLink };

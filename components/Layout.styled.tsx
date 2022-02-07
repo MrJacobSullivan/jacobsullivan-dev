@@ -1,18 +1,14 @@
 import tw, { styled } from 'twin.macro';
 
-interface ILayoutContainer {
-  dark?: boolean;
-}
-
-const LayoutContainer = styled.div<ILayoutContainer>(({ dark }) => [
-  tw`flex justify-center w-full h-screen`,
-  dark && tw`bg-red-5`
+const Container = styled.div(() => [
+  tw`flex flex-col items-center justify-center w-screen`,
+  tw`dark:text-gray-1 text-gray-9`
 ]);
 
-const Margins = styled.div(() => [tw`flex flex-col w-2/3 min-h-screen`]);
+const Margins = styled.div(() => [
+  tw`flex flex-col items-center w-1/2 min-h-screen`
+]);
 
-interface IMainContainer {}
+const Page = styled.main(() => [tw`flex-grow`]);
 
-const PageContainer = styled.main<IMainContainer>(() => [tw`flex-grow`]);
-
-export { LayoutContainer, Margins, PageContainer };
+export { Container, Margins, Page };

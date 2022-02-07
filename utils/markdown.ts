@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-import type { Article } from '../interfaces/index';
+import type { Article } from '../types/markdown';
 
 export enum Folder {
   blog = 'blog',
@@ -24,7 +24,7 @@ export const getFilePaths = (folder: Folder) => {
   return fs.readdirSync(folderPath).filter((file) => /\.md?$/.test(file));
 };
 
-export const getArticles = (folder: Folder) => {
+export const getArticles = (folder: Folder): Article[] => {
   const files = getFilePaths(folder);
 
   const articles = files.map((file) => {
@@ -33,9 +33,8 @@ export const getArticles = (folder: Folder) => {
 
     return {
       content,
-      data,
-      slug: file.split('.')[0]
-    };
+      metadata: { ...data, slug: file.split('.')[0] }
+    } as Article;
   });
 
   return articles;

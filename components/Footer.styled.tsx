@@ -1,15 +1,9 @@
 import tw, { styled } from 'twin.macro';
 
-interface IFooterContainer {}
-
-const FooterContainer = styled.footer<IFooterContainer>(() => [
+const Container = styled.footer(() => [
   tw`bottom-0 flex items-center justify-center h-24 p-4`
 ]);
 
-interface ICopyrightText {}
+const CopyrightText = styled.span(() => [tw`text-sm font-light`]);
 
-const CopyrightText = styled.span<ICopyrightText>(() => [
-  tw`text-sm font-light`
-]);
-
-export { FooterContainer, CopyrightText };
+export { Container, CopyrightText };

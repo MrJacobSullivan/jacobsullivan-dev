@@ -5,37 +5,39 @@ import Link from 'next/link';
 
 import Layout from '../../components/Layout';
 
-import { getAllFiles } from '../../utils/mdx';
-
-interface Post {
-  filePath: string;
-  data: {
-    title: string;
-  };
-}
+import { Folder, getArticles } from '../../utils/markdown';
+import type { Article } from '../../interfaces';
 
 const Blog: NextPage = ({
-  posts
+  articles
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return (
-    <Layout>
-      <ul>
-        {posts.map((post: Post) => {
-          <li key={post.filePath}>
-            <Link href={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`}>
-              <a>{post.data.title}</a>
-            </Link>
-          </li>;
-        })}
-      </ul>
-    </Layout>
-  );
+  console.log(articles);
+
+  if (articles)
+    return (
+      <Layout>
+        <ul>
+          {articles.map((article: Article, index: number) => {
+            console.log(article);
+            return (
+              <li key={index}>
+                <Link href={`/blog/${article.metadata.slug}`}>
+                  <a>{article.metadata.title}</a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </Layout>
+    );
+
+  return <div>loading...</div>;
 };
 
 export default Blog;
 
 export const getStaticProps: GetStaticProps = () => {
-  const posts = getAllFiles('blog');
+  const articles = getArticles(Folder.blog);
 
-  return { props: { posts } };
+  return { props: { articles } };
 };

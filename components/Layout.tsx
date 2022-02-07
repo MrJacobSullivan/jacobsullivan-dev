@@ -1,23 +1,21 @@
-import type { ReactNode } from 'react';
-
-import { LayoutContainer, Margins, PageContainer } from './Layout.styled';
-
+import * as React from 'react';
+import { Container, Margins, Page } from './Layout.styled';
 import Header from './Header';
 import Footer from './Footer';
 
 type Props = {
-  children?: ReactNode;
+  children?: React.ReactNode;
 };
 
 const Layout = ({ children }: Props) => {
   return (
-    <LayoutContainer>
+    <Container>
       <Margins>
         <Header />
-        <PageContainer>{children}</PageContainer>
+        <Page>{children}</Page>
         <Footer />
       </Margins>
-    </LayoutContainer>
+    </Container>
   );
 };
 
