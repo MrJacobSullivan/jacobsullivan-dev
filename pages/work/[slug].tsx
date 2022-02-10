@@ -1,12 +1,4 @@
 import * as React from 'react';
-import type {
-  NextPage,
-  GetStaticPaths,
-  GetStaticProps,
-  GetStaticPropsContext,
-  InferGetStaticPropsType
-} from 'next';
-import 'twin.macro';
 import NotFound from '../../components/NotFound';
 import Markdown from '../../components/Markdown';
 import {
@@ -15,6 +7,14 @@ import {
   getArticleBySlug
 } from '../../utils/markdown';
 
+import type {
+  NextPage,
+  GetStaticPaths,
+  GetStaticProps,
+  GetStaticPropsContext,
+  InferGetStaticPropsType
+} from 'next';
+
 const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   data,
   content
@@ -22,7 +22,7 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   if (!data || !content) return <NotFound withLayout />;
 
   return (
-    <section>
+    <section className="w-full">
       <div>
         <h1>{data.title}</h1>
       </div>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useIsMounted } from '../../hooks/useIsMounted';
 import { useThemeToggle } from '../../hooks/useThemeToggle';
-import { Button, Sun, Moon } from './styles';
+import Icon from './Icon';
 
 const ThemeSwitchButton = () => {
   const mounted = useIsMounted();
@@ -10,9 +10,12 @@ const ThemeSwitchButton = () => {
   if (!mounted) return null;
 
   return (
-    <Button onClick={toggleTheme}>
-      {theme === 'dark' ? <Sun /> : <Moon />}
-    </Button>
+    <button
+      className="ml-6 transition duration-150 rounded bg-blue-2 hover:bg-blue-4 dark:bg-yellow-2 dark:hover:bg-yellow-4 active:outline-none"
+      onClick={toggleTheme}
+    >
+      <Icon theme={theme} />
+    </button>
   );
 };
 

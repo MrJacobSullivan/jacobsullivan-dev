@@ -4,13 +4,8 @@ import { SpecialComponents } from 'react-markdown/lib/ast-to-react';
 import { NormalComponents } from 'react-markdown/lib/complex-types';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { Article } from './styles';
 
-interface IProps {
-  content: string;
-}
-
-const Markdown = ({ content }: IProps) => {
+const Markdown: React.FC<{ content: string }> = ({ content }) => {
   const components: Partial<
     Omit<NormalComponents, keyof SpecialComponents> & SpecialComponents
   > = {
@@ -35,9 +30,9 @@ const Markdown = ({ content }: IProps) => {
   };
 
   return (
-    <Article>
+    <article>
       <ReactMarkdown components={components}>{content}</ReactMarkdown>
-    </Article>
+    </article>
   );
 };
 

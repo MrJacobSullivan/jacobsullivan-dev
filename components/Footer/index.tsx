@@ -1,15 +1,14 @@
 import * as React from 'react';
-import { Container, CopyrightText } from './styles';
 
 const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <Container>
-      <CopyrightText>
+    <footer className="bottom-0 flex items-center justify-center h-24 p-4">
+      <span className="text-sm font-light">
         &copy; {year} Jacob Sullivan. All rights reserved.
-      </CopyrightText>
-    </Container>
+      </span>
+    </footer>
   );
 };
 

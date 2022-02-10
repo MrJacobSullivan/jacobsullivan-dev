@@ -1,8 +1,9 @@
 import * as React from 'react';
-import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Loading from '../../components/Loading';
 import ArticleLink from '../../components/ArticleLink';
 import { Folder, getAllArticleMetadata } from '../../utils/markdown';
+
+import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
 import type { ArticleData } from '../../types/markdown';
 
 const Work: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({

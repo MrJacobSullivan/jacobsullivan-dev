@@ -1,9 +1,10 @@
 import * as React from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { LinkContainer, linkStyles } from './styles';
+import { linkStyles } from './styles';
 
-const NavLink: React.FC<{ href: string; external?: boolean }> = ({
-  children,
+const NavLink: React.FC<{ text: string; href: string; external?: boolean }> = ({
+  text,
   href,
   external
 }) => {
@@ -19,20 +20,20 @@ const NavLink: React.FC<{ href: string; external?: boolean }> = ({
   if (external) {
     return (
       <a
-        css={linkStyles(false)}
+        className={linkStyles(false)}
         href={href}
         target="_blank"
         rel="noopener noreferrer"
       >
-        {children}
+        {text}
       </a>
     );
   }
 
   return (
-    <LinkContainer href={href} isActive={isActive}>
-      <a css={linkStyles(isActive)}>{children}</a>
-    </LinkContainer>
+    <Link href={href}>
+      <a className={linkStyles(isActive)}>{text}</a>
+    </Link>
   );
 };
 

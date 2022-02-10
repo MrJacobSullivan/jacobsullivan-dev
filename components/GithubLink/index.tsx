@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Github } from './styles';
+import { SiGithub } from 'react-icons/si';
 
 const GithubLink: React.FunctionComponent<{ src: string; text?: string }> = ({
   src,
@@ -7,7 +7,7 @@ const GithubLink: React.FunctionComponent<{ src: string; text?: string }> = ({
   ...rest
 }) => (
   <a href={src} {...rest}>
-    <Github />
+    <SiGithub />
     {text && <p>{text}</p>}
   </a>
 );
