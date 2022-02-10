@@ -3,11 +3,7 @@ import { Container, Margins, Page } from './styles';
 import Header from '../Header';
 import Footer from '../Footer';
 
-type Props = {
-  children?: React.ReactNode;
-};
-
-const Layout = ({ children }: Props) => {
+const Layout: React.FC = ({ children }) => {
   return (
     <Container>
       <Margins>

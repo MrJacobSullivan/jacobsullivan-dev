@@ -1,13 +1,7 @@
-import type { ReactNode, ReactElement } from 'react';
-
+import * as React from 'react';
 import { SectionContainer, SectionTitle, SectionContent } from './styles';
 
-type Props = {
-  title?: String;
-  children?: ReactNode;
-};
-
-const Section = ({ title, children }: Props): ReactElement => {
+const Section: React.FC<{ title?: String }> = ({ title, children }) => {
   return (
     <SectionContainer>
       <SectionTitle>{title}</SectionTitle>

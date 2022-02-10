@@ -1,7 +1,29 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  content: ['**.*.js', '**.*.jsx', '**.*.ts', '**.*.tsx'],
+  content: ['./components/**.*.tsx', './pages/**.*.tsx', './styles/**.*.tsx'],
+  darkMode: 'class',
   theme: {
-    colors: require('tailwindcss-open-color')
+    colors: require('tailwindcss-open-color'),
+    extend: {
+      fontFamily: {
+        system: [...defaultTheme.fontFamily.sans]
+      },
+      typography: (theme) => ({
+        dark: {
+          css: {
+            color: theme('colors.gray.0')
+          }
+        }
+      })
+    }
   },
-  plugins: [require('@tailwindcss/typography')]
+  variants: {
+    typography: ['dark']
+  },
+  plugins: [
+    require('@tailwindcss/typography')({
+      className: 'markdown'
+    })
+  ]
 };

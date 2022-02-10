@@ -1,13 +1,10 @@
 import tw, { styled } from 'twin.macro';
-import { SunIcon } from '@heroicons/react/outline';
-import { MoonIcon } from '@heroicons/react/solid';
+import { HiSun, HiOutlineMoon } from 'react-icons/hi';
 
-const Button = styled.button(() => [
-  tw`ml-6 transition duration-150 rounded bg-blue-2 dark:bg-yellow-2 hover:bg-blue-3 dark:hover:bg-yellow-3 active:outline-none`
+export const Button = styled.button(() => [
+  tw`ml-6 transition duration-150 rounded border-[0.2rem] bg-blue-2 hover:bg-blue-4 border-blue-6 dark:bg-yellow-2 dark:hover:bg-yellow-4 active:outline-none dark:border-yellow-6`
 ]);
 
-const iconTheme = tw`w-10 h-10 p-2 text-gray-0 dark:(text-gray-9)`;
-const Sun = styled(SunIcon)(() => [iconTheme]);
-const Moon = styled(MoonIcon)(() => [iconTheme]);
-
-export { Button, Sun, Moon };
+const iconTheme = tw`w-10 h-10 p-2 text-gray-0 dark:text-gray-9`;
+export const Sun = styled(HiSun)(() => [iconTheme]);
+export const Moon = styled(HiOutlineMoon)(() => [iconTheme]);

@@ -1,4 +1,4 @@
-import tw, { styled, css } from 'twin.macro';
+import tw, { styled } from 'twin.macro';
 import Link from 'next/link';
 
 const Container = styled.header(() => [
@@ -10,14 +10,9 @@ const Title = styled.div(() => [tw`flex items-center w-1/2`]);
 const Navigation = styled.nav(() => [tw`flex items-center w-1/2`]);
 
 const TitleLink = styled(Link)(() => [
-  tw`text-xl font-light transition duration-150`,
-  css`
-    * {
-      color: ${tw`text-violet-5`};
-    }
-  `
+  tw`text-xl font-light transition duration-150`
 ]);
 
-const PageLink = styled(Link)(() => [tw`ml-4`]);
+const PageLink = styled(TitleLink)(() => ({}));
 
 export { Container, Title, Navigation, TitleLink, PageLink };

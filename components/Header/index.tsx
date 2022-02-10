@@ -1,7 +1,8 @@
 import * as React from 'react';
 import ThemeButton from '../ThemeButton';
-import { Container, Title, Navigation, TitleLink, PageLink } from './styles';
-import { config } from '../../config';
+import NavLink from '../NavLink';
+import { Container, Title, Navigation, TitleLink } from './styles';
+import { links } from '../../config';
 
 const Header = () => {
   return (
@@ -13,22 +14,13 @@ const Header = () => {
       </Title>
 
       <Navigation>
-        <PageLink href="/work">
-          <a>Work</a>
-        </PageLink>
-
-        <PageLink href="/resume">
-          <a target="_blank" rel="noopener noreferrer">
-            Resume
-          </a>
-        </PageLink>
-
-        <PageLink href={config.github}>
-          <a target="_blank" rel="noopener noreferrer">
-            Github
-          </a>
-        </PageLink>
-
+        <NavLink href="/work">Work</NavLink>
+        <NavLink external href="/resume">
+          Resume
+        </NavLink>
+        <NavLink external href={links.githubURL}>
+          Github
+        </NavLink>
         <ThemeButton />
       </Navigation>
     </Container>

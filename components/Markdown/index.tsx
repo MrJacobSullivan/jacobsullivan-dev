@@ -1,10 +1,10 @@
 import * as React from 'react';
-import 'twin.macro';
 import ReactMarkdown from 'react-markdown';
 import { SpecialComponents } from 'react-markdown/lib/ast-to-react';
 import { NormalComponents } from 'react-markdown/lib/complex-types';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { Article } from './styles';
 
 interface IProps {
   content: string;
@@ -35,9 +35,9 @@ const Markdown = ({ content }: IProps) => {
   };
 
   return (
-    <article tw="prose">
+    <Article>
       <ReactMarkdown components={components}>{content}</ReactMarkdown>
-    </article>
+    </Article>
   );
 };
 

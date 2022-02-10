@@ -1,10 +1,8 @@
 import tw, { styled } from 'twin.macro';
 import { HeaderText } from '../GeneralContent/styles';
 
-const SectionContainer = styled.div(() => [tw`flex flex-col`]);
+export const SectionContainer = styled.div(() => [tw`flex flex-col`]);
 
-const SectionTitle = styled(HeaderText)(() => [tw`font-light text-2xl`]);
+export const SectionTitle = styled(HeaderText)(() => [tw`font-light text-2xl`]);
 
-const SectionContent = styled.div(() => [tw``]);
-
-export { SectionContainer, SectionTitle, SectionContent };
+export const SectionContent = styled.div(() => [tw``]);

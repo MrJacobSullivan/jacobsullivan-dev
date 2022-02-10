@@ -1,6 +1,4 @@
 import * as React from 'react';
-import 'twin.macro';
-
 import type {
   NextPage,
   GetStaticPaths,
@@ -8,11 +6,9 @@ import type {
   GetStaticPropsContext,
   InferGetStaticPropsType
 } from 'next';
-
+import 'twin.macro';
 import NotFound from '../../components/NotFound';
-import Layout from '../../components/Layout';
 import Markdown from '../../components/Markdown';
-
 import {
   Folder,
   getAllArticleMetadata,
@@ -26,15 +22,13 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   if (!data || !content) return <NotFound withLayout />;
 
   return (
-    <Layout>
-      <section>
-        <div>
-          <h1>{data.title}</h1>
-        </div>
+    <section>
+      <div>
+        <h1>{data.title}</h1>
+      </div>
 
-        <Markdown content={content.body} />
-      </section>
-    </Layout>
+      <Markdown content={content.body} />
+    </section>
   );
 };
 
