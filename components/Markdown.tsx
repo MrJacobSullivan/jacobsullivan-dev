@@ -1,4 +1,5 @@
 import * as React from 'react';
+import 'twin.macro';
 import ReactMarkdown from 'react-markdown';
 import { SpecialComponents } from 'react-markdown/lib/ast-to-react';
 import { NormalComponents } from 'react-markdown/lib/complex-types';
@@ -34,9 +35,9 @@ const Markdown = ({ content }: IProps) => {
   };
 
   return (
-    <div>
+    <article tw="prose">
       <ReactMarkdown components={components}>{content}</ReactMarkdown>
-    </div>
+    </article>
   );
 };
 

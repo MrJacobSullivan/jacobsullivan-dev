@@ -1,12 +1,15 @@
-export interface Metadata {
+export interface ArticleData {
   title: string;
   slug: string;
-  description?: string;
-  date?: string;
-  tags?: string[];
+}
+
+export interface ArticleContent {
+  date: string;
+  tags: string[];
+  body: string;
 }
 
 export interface Article {
-  metadata: Metadata;
-  content: string;
+  data: ArticleData;
+  content: ArticleContent;
 }

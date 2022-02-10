@@ -2,60 +2,57 @@ import {
   Folder,
   contentFolderPath,
   getFolderPath,
-  getFilePaths,
-  getArticles,
-  getArticle
+  getFiles,
+  getAllArticleMetadata,
+  getArticleBySlug
 } from '../utils/markdown';
 
-const constants = {
-  CONTENT_FOLDER_PATH: '/Users/jacobsullivan/Desktop/jacobsullivan-dev/content',
-  TEST_FOLDER_PATH:
-    '/Users/jacobsullivan/Desktop/jacobsullivan-dev/content/test',
-  TEST_FOLDER_FILES: ['test.md'],
-  TEST_ARTICLE_SLUG: 'test',
-  TEST_ARTICLE_CONTENT: {
-    content: '\n# Hello, world\n',
-    metadata: {
-      description: 'this is a test',
-      slug: 'test',
-      title: 'Test',
-      tags: ['test', 'javascript'],
-      date: '01/25/2022'
-    }
+const CONTENT_FOLDER_PATH =
+  '/Users/jacobsullivan/Desktop/jacobsullivan-dev/content';
+const TEST_FOLDER_PATH =
+  '/Users/jacobsullivan/Desktop/jacobsullivan-dev/content/test';
+const TEST_FOLDER_FILES = ['test.md'];
+const TEST_ARTICLE_SLUG = 'test';
+const TEST_ARTICLE_DATA = { slug: TEST_ARTICLE_SLUG, title: 'Test' };
+const TEST_ARTICLE_CONTENT = {
+  data: TEST_ARTICLE_DATA,
+  content: {
+    description: 'this is a test',
+    date: '01/25/2022',
+    tags: ['test', 'javascript'],
+    body: '\n# Hello, world\n'
   }
 };
 
 describe('getContentPath', () => {
   test('should return the correct content path', () => {
-    expect(contentFolderPath).toEqual(constants.CONTENT_FOLDER_PATH);
+    expect(contentFolderPath).toEqual(CONTENT_FOLDER_PATH);
   });
 });
 
 describe('getFolderPath', () => {
   test('should return the correct file path', () => {
-    expect(getFolderPath(Folder.test)).toEqual(constants.TEST_FOLDER_PATH);
+    expect(getFolderPath(Folder.test)).toEqual(TEST_FOLDER_PATH);
   });
 });
 
-describe('getFilePaths', () => {
+describe('getFiles', () => {
   test('should return the correct files in a folder', () => {
-    expect(getFilePaths(Folder.test)).toEqual(constants.TEST_FOLDER_FILES);
+    expect(getFiles(Folder.test)).toEqual(TEST_FOLDER_FILES);
   });
 });
 
-describe('getArticles', () => {
+describe('getAllArticleMetadata', () => {
   test('should return the correct data for each article', () => {
-    const articles = getArticles(Folder.test);
-    expect(articles).toMatchObject([constants.TEST_ARTICLE_CONTENT]);
+    const articles = getAllArticleMetadata(Folder.test);
+    expect(articles).toMatchObject([TEST_ARTICLE_DATA]);
   });
 });
 
-describe('getArticle', () => {
+describe('getArticleBySlug', () => {
   test('should return the correct data for an article', () => {
-    const article = getArticle(Folder.test, constants.TEST_ARTICLE_SLUG);
-    expect(article).toMatchObject(constants.TEST_ARTICLE_CONTENT);
-    expect(article.metadata).toMatchObject(
-      constants.TEST_ARTICLE_CONTENT.metadata
-    );
+    const { data, content } = getArticleBySlug(Folder.test, TEST_ARTICLE_SLUG);
+    expect(data).toMatchObject(TEST_ARTICLE_CONTENT.data);
+    expect(content).toMatchObject(TEST_ARTICLE_CONTENT.content);
   });
 });

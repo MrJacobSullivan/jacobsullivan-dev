@@ -23,10 +23,6 @@ const Header = () => {
           <a>Work</a>
         </PageLink>
 
-        <PageLink href="/blog">
-          <a>Blog</a>
-        </PageLink>
-
         <PageLink href="/resume">
           <a target="_blank" rel="noopener noreferrer">
             Resume
