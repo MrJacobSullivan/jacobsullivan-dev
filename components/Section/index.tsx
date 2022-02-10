@@ -1,10 +1,6 @@
 import type { ReactNode, ReactElement } from 'react';
 
-import {
-  SectionContainer,
-  SectionTitle,
-  SectionContent
-} from './Section.styled';
+import { SectionContainer, SectionTitle, SectionContent } from './styles';
 
 type Props = {
   title?: String;

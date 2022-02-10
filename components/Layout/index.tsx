@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Container, Margins, Page } from './Layout.styled';
-import Header from './Header';
-import Footer from './Footer';
+import { Container, Margins, Page } from './styles';
+import Header from '../Header';
+import Footer from '../Footer';
 
 type Props = {
   children?: React.ReactNode;

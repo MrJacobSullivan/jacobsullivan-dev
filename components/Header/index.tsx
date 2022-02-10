@@ -1,13 +1,7 @@
 import * as React from 'react';
-import ThemeButton from './ThemeButton';
-import {
-  Container,
-  Title,
-  Navigation,
-  TitleLink,
-  PageLink
-} from './Header.styled';
-import { config } from '../config';
+import ThemeButton from '../ThemeButton';
+import { Container, Title, Navigation, TitleLink, PageLink } from './styles';
+import { config } from '../../config';
 
 const Header = () => {
   return (

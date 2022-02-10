@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useIsMounted } from '../hooks/useIsMounted';
-import { useThemeToggle } from '../hooks/useThemeToggle';
-import { Button, Sun, Moon } from './ThemeButton.styled';
+import { useIsMounted } from '../../hooks/useIsMounted';
+import { useThemeToggle } from '../../hooks/useThemeToggle';
+import { Button, Sun, Moon } from './styles';
 
 const ThemeSwitchButton = () => {
   const mounted = useIsMounted();

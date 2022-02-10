@@ -1,5 +1,5 @@
 import tw, { styled } from 'twin.macro';
-import { HeaderText } from './Content.styled';
+import { HeaderText } from '../GeneralContent/styles';
 
 const SectionContainer = styled.div(() => [tw`flex flex-col`]);
 

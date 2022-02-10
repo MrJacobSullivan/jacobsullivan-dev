@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Github } from './GithubLink.styled';
+import { Github } from './styles';
 
 const GithubLink: React.FunctionComponent<{ src: string; text?: string }> = ({
   src,

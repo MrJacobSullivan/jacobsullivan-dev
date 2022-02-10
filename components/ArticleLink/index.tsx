@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
+import { Card, linkStyles } from './styles';
 
 interface IProps {
   href: string;
@@ -7,11 +8,11 @@ interface IProps {
 
 const ArticleLink: React.FC<IProps> = ({ children, href }) => {
   return (
-    <article>
+    <Card>
       <Link href={href}>
-        <a>{children}</a>
+        <a css={linkStyles}>{children}</a>
       </Link>
-    </article>
+    </Card>
   );
 };
 
