@@ -1,18 +1,13 @@
 ---
-id: 0
-title: Ultimate Tic-Tac-Toe
+id: 1
+title: Portfolio
 date: 02/01/2022
-imageSrc: /tic-tac-toe.jpeg
-imageAlt: Vercel Logo
 description:
 technologies:
-  - React.js
+  - Next.js
   - TypeScript
-  - Context API
-  - SASS
-  - Node.js
-  - WebSockets
-  - Turborepo
+  - TailwindCSS
+  - Markdown
 tags:
 ---
 

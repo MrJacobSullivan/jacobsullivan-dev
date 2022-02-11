@@ -26,6 +26,13 @@ const Markdown: React.FC<{ content: string }> = ({ content }) => {
           {children}
         </code>
       );
+    },
+    a({ href, children, ...props }) {
+      return (
+        <a href={href} {...props} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      );
     }
   };
 

@@ -1,0 +1,41 @@
+{
+  "about": "I am a software engineer. I studied Full Stack Web Development at the Bloom Institute of Technology. I'm currently learning TypeScript (it's amazing). I feel extremely fortunate that I found web development as a career. Everyday I am challenged in a new and excited way.",
+  "skills": {
+    "frontend": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next",
+      "Redux",
+      "Hooks",
+      "Context API",
+      "Jest",
+      "Cypress",
+      "HTML",
+      "CSS",
+      "SASS",
+      "Tailwind CSS"
+    ],
+    "backend": [
+      "Python",
+      "Express",
+      "Socket.io",
+      "SQL",
+      "PostgreSQL",
+      "Github",
+      "Vercel",
+      "Netlify",
+      "Cypress",
+      "Heroku",
+      "Husky"
+    ],
+    "additional": [
+      "Algorithms",
+      "Data Structures",
+      "End-to-End Testing",
+      "Integration Testing",
+      "Unit Testing",
+      "Deployment"
+    ]
+  }
+}

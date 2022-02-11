@@ -13,9 +13,9 @@ const Work: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <ul>
-      {articles.map(({ slug, title }: ArticleData) => {
+      {articles.map(({ id, slug, title }: ArticleData) => {
         return (
-          <ArticleLink key={slug} href={`/work/${slug}`}>
+          <ArticleLink key={id} href={`/work/${slug}`}>
             {title}
           </ArticleLink>
         );
@@ -28,6 +28,7 @@ export default Work;
 
 export const getStaticProps: GetStaticProps = () => {
   const articles = getAllArticleMetadata(Folder.work);
+  articles.sort((a, b) => a.id - b.id);
 
   return { props: { articles } };
 };
