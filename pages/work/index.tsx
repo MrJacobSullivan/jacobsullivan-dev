@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Loading from '../../components/Loading';
-import ArticleLink from '../../components/ArticleLink';
+import ArticleCard from '../../components/ArticleCard';
 import { Folder, getAllArticleMetadata } from '../../utils/markdown';
 
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
@@ -13,12 +13,8 @@ const Work: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <ul>
-      {articles.map(({ id, slug, title }: ArticleData) => {
-        return (
-          <ArticleLink key={id} href={`/work/${slug}`}>
-            {title}
-          </ArticleLink>
-        );
+      {articles.map((article: ArticleData) => {
+        return <ArticleCard key={article.id} article={article} />;
       })}
     </ul>
   );

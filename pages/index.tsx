@@ -1,7 +1,8 @@
 import * as React from 'react';
-import SkillList from '../components/SkillList';
-import content from '../content/home.json';
+// import SkillList from '../components/SkillList';
+import ArticleCard from '../components/ArticleCard';
 import { Folder, getFirstNArticles } from '../utils/markdown';
+import content from '../content/home.json';
 
 import type { GetStaticProps, NextPage } from 'next';
 import { ArticleData } from '../types/markdown';
@@ -12,8 +13,8 @@ const Home: NextPage<{ articles: ArticleData[] }> = ({ articles }) => {
       <h2>About Me</h2>
       <p>{content.about}</p>
 
-      <h2>Skills</h2>
-      <div className="grid grid-cols-3">
+      {/* <h2>Skills</h2>
+      <div className="flex justify-around">
         <div className="w-min">
           <h3 className="p-2 px-4 rounded text-green-6 bg-gray-8">Frontend</h3>
           <SkillList skills={content.skills.frontend} />
@@ -28,21 +29,19 @@ const Home: NextPage<{ articles: ArticleData[] }> = ({ articles }) => {
           </h3>
           <SkillList skills={content.skills.backend} />
         </div>
-      </div>
+      </div> */}
 
       {articles && (
         <>
           <h2>Projects</h2>
 
           <ul>
-            {articles.map((article) => {
-              return <li key={article.id}>{article.title}</li>;
-            })}
+            {articles.map((article) => (
+              <ArticleCard key={article.id} article={article} />
+            ))}
           </ul>
         </>
       )}
-
-      <h2>Experience</h2>
     </div>
   );
 };
