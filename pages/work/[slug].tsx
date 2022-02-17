@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Image from 'next/image';
 import NotFound from '../../components/NotFound';
 import Markdown from '../../components/Markdown';
 import {
@@ -7,6 +6,8 @@ import {
   getAllArticleMetadata,
   getArticleBySlug
 } from '../../utils/markdown';
+
+import { Title, Date, Links } from '../../components/Article';
 
 import type {
   NextPage,
@@ -22,28 +23,19 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   if (!data || !content) return <NotFound withLayout />;
   const { title } = data;
-  const {
-    date,
-    image: { src, alt },
-    description,
-    technologies,
-    tags,
-    body
-  } = content;
+  const { date, description, technologies, tags, github, website, body } =
+    content;
 
   return (
     <section className="w-full">
       <div>
-        <h1>{title}</h1>
+        <Title text={title} />
       </div>
 
       <div>
-        <div className="w-16">
-          {src && alt && (
-            <Image src={src} alt={alt} layout="fill" objectFit="cover" />
-          )}
-        </div>
-        <p>{date}</p>
+        <Date date={date} />
+        <Links links={{ github, website }} />
+
         <p>{description}</p>
 
         <h3>Technologies Used</h3>

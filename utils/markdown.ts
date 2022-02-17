@@ -59,16 +59,7 @@ export const getArticleBySlug = (folder: Folder, slug: string): Article => {
 
   const {
     content,
-    data: {
-      id,
-      title,
-      date,
-      imageSrc,
-      imageAlt,
-      description,
-      technologies,
-      tags
-    }
+    data: { id, title, date, description, technologies, tags, github, website }
   } = matter(file);
 
   const article = {
@@ -78,11 +69,12 @@ export const getArticleBySlug = (folder: Folder, slug: string): Article => {
       title
     },
     content: {
-      image: { src: imageSrc, alt: imageAlt },
       date,
       description,
       technologies,
       tags,
+      github,
+      website,
       body: content
     }
   } as Article;

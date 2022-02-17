@@ -11,10 +11,12 @@ export interface ArticleData {
 
 export interface ArticleContent {
   date?: string;
-  image: Image;
+  image?: Image;
   description?: string;
   technologies?: string[];
   tags?: string[];
+  github?: string;
+  website?: string;
   body: string;
 }
 
