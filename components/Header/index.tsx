@@ -20,7 +20,7 @@ const Header = () => {
         <nav>
           <NavLink href="/work" text="Work" />
           <NavLink external href="/resume" text="Resume" />
-          <NavLink external href={links.githubURL} text="Github" />
+          <NavLink external href={links.githubURL} text="GitHub" />
         </nav>
 
         <ThemeButton />

@@ -1,22 +1,16 @@
-export interface Image {
-  src: string;
-  alt: string;
-}
-
 export interface ArticleData {
   title: string;
   slug: string;
   id: number;
+  color: string;
 }
 
 export interface ArticleContent {
-  date?: string;
-  image?: Image;
-  description?: string;
-  technologies?: string[];
-  tags?: string[];
-  github?: string;
-  website?: string;
+  date: string;
+  description: string;
+  technologies: string[];
+  github: string;
+  website: string;
   body: string;
 }
 

@@ -32,12 +32,13 @@ export const getAllArticleMetadata = (folder: Folder): ArticleData[] => {
     const filePath = path.join(getFolderPath(folder), file);
     const source = fs.readFileSync(filePath);
     const {
-      data: { title, id }
+      data: { title, color }
     } = matter(source);
 
-    const [slug] = file.split('.');
+    const [filename] = file.split('.');
+    const [id, ...slug] = filename.split('-');
 
-    return { slug, title, id };
+    return { slug: slug.join('-'), title, id: parseInt(id), color };
   });
   articles.sort((a, b) => a.id - b.id);
 
@@ -54,25 +55,26 @@ export const getFirstNArticles = (
 
 // single article by slug
 export const getArticleBySlug = (folder: Folder, slug: string): Article => {
-  const filepath = path.join(getFolderPath(folder), slug + '.md');
+  const matchingFile = getFiles(folder).find((_file) => _file.includes(slug));
+  const filepath = path.join(getFolderPath(folder), matchingFile as string);
   const file = fs.readFileSync(filepath);
 
   const {
     content,
-    data: { id, title, date, description, technologies, tags, github, website }
+    data: { id, title, date, description, technologies, github, website, color }
   } = matter(file);
 
   const article = {
     data: {
       id,
       slug,
-      title
+      title,
+      color
     },
     content: {
       date,
       description,
       technologies,
-      tags,
       github,
       website,
       body: content

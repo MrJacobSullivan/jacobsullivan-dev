@@ -7,8 +7,6 @@ import {
   getArticleBySlug
 } from '../../utils/markdown';
 
-import { Title, Date, Links } from '../../components/Article';
-
 import type {
   NextPage,
   GetStaticPaths,
@@ -23,33 +21,45 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   if (!data || !content) return <NotFound withLayout />;
   const { title } = data;
-  const { date, description, technologies, tags, github, website, body } =
-    content;
+  const { date, technologies, github, website, color, body } = content;
 
   return (
     <section className="w-full">
       <div>
-        <Title text={title} />
+        <div className="flex items-center justify-between w-full h-32 p-4 my-0 bg-gray-8">
+          <h1 className="pl-4 m-0">{title}</h1>
+
+          <div className="flex flex-col items-end justify-end h-full">
+            <div>
+              <a
+                className="pr-2 border-r"
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+              <a
+                href={website}
+                className="pl-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Website
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <Date date={date} />
-        <Links links={{ github, website }} />
-
-        <p>{description}</p>
-
-        <h3>Technologies Used</h3>
-        <ul>
+      <div className="mt-12 mb-6">
+        <div>
           {technologies?.map((technology: string, i: number) => (
-            <li key={i}>{technology}</li>
+            <span key={i} className="mr-4">
+              {technology}
+            </span>
           ))}
-        </ul>
-
-        <ul>
-          {tags?.map((tag: string, i: number) => (
-            <li key={i}>{tag}</li>
-          ))}
-        </ul>
+        </div>
       </div>
 
       <Markdown content={body} />
@@ -73,13 +83,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({
   params
 }: GetStaticPropsContext) => {
-  if (params) {
-    const { data, content } = getArticleBySlug(
-      Folder.work,
-      params.slug as string
-    );
-    return { props: { data, content } };
-  }
-
-  return { props: { data: null, content: null } };
+  const slug = params?.slug as string;
+  const { data, content } = getArticleBySlug(Folder.work, slug);
+  return { props: JSON.parse(JSON.stringify({ data, content })) };
 };
