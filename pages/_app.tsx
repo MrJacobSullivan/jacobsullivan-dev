@@ -27,6 +27,7 @@ const App = ({ Component, pageProps }: AppProps) => (
         href="/favicon/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
+      <title>Jacob Sullivan | Web Developer</title>
     </Head>
     <Layout>
       <Component {...pageProps} />
