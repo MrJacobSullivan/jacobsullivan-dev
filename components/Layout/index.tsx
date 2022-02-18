@@ -7,7 +7,7 @@ const Layout: React.FC = ({ children }) => {
     <div className="flex flex-col items-center justify-center w-screen">
       <div className="flex flex-col items-center min-h-screen w-[45%]">
         <Header />
-        <main className="flex justify-center flex-grow w-full prose dark:prose-invert prose-headings:font-light">
+        <main className="flex justify-center flex-grow w-full prose dark:prose-invert prose-headings:font-light prose-a:no-underline">
           {children}
         </main>
         <Footer />

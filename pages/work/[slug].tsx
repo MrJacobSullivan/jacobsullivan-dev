@@ -21,12 +21,12 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   if (!data || !content) return <NotFound withLayout />;
   const { title } = data;
-  const { date, technologies, github, website, color, body } = content;
+  const { technologies, github, website, body } = content;
 
   return (
     <section className="w-full">
       <div>
-        <div className="flex items-center justify-between w-full h-32 p-4 my-0 bg-gray-8">
+        <div className="flex items-center justify-between w-full h-32 p-4 my-0 bg-gray-2 dark:bg-gray-8">
           <h1 className="pl-4 m-0">{title}</h1>
 
           <div className="flex flex-col items-end justify-end h-full">

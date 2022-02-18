@@ -12,11 +12,15 @@ const Work: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   if (!articles) return <Loading withLayout />;
 
   return (
-    <ul>
-      {articles.map((article: ArticleData) => {
-        return <ArticleCard key={article.id} article={article} />;
-      })}
-    </ul>
+    <div className="w-full">
+      <h1>Projects</h1>
+
+      <ul className="ml-0">
+        {articles.map((article: ArticleData) => {
+          return <ArticleCard key={article.id} article={article} />;
+        })}
+      </ul>
+    </div>
   );
 };
 
